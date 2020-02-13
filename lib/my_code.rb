@@ -1,26 +1,31 @@
 require 'pry'
 
 def map(array)
-  new = []
   i=0
+  answer = []
   while i < array.length do
-    new.push(yield(array[i]))
-    i += 1
+    answer << yield(array[i])
+    i +=1
   end
-  new
-end
+  answer
+  end
 
-def reduce(array, sp = nil)
-  if sp
-    sum = sp
+
+def reduce(array, sn = nil)
+
+  if sn
+    sum = sn
     i = 0
+
   else
     sum = array[0]
     i=1
   end
-  while i < array.length do
-    sum = yield(sum,array[i])
-    i += 1
-  end
-  sum
-  end
+
+while i < array.length
+  sum = yield(sum, array[i])
+
+  i+=1
+end
+sum
+end
